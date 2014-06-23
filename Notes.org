@@ -1,0 +1,26 @@
+* Bugs:
+  - [ ] The screen is flickering
+    - Still happen after using double buffer
+    - May need to only rerender the part that dirty
+
+* UI:
+  - [ ] Load UI screens and their components from .xml (or .json) files
+  - [ ] Set up the menu UI
+  - [ ] Set up the tooltip for the game
+  ** Main Menu:
+    - Continue: continue with the lastest saved game
+    - New game: start a new game
+    - Settings: config the game
+    - Exit: exit the game
+  ** Settings:
+    - Change the window's size
+    - Change the font size
+    - Change the cursor size  
+
+* Map:
+  - [ ] Load map from file
+  - Make editor(?), allow to save maps to files
+  - Add more procedural 2D map generation algorithm
+
+* Dialogue sytem:
+  - [ ] Design the format for the dialogue system with multiple choices
