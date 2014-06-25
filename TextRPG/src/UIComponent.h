@@ -22,6 +22,7 @@ public:
 
     virtual void Update(long period);
     virtual void Render();
+    virtual bool HandleInput(); // Return true if the component handled the input, return false if not
 
 	virtual bool ImportAttributes(const xml_node& xmlNode);
 
@@ -29,6 +30,9 @@ public:
     
 	string GetText();
 	void SetText(const string& text);
+
+    bool IsFocused();
+    void SetFocus(const bool newFocus);
 
 	UIComponent* GetChildComponent(const string& id);
 	void AddChildComponent(UIComponent* child);
@@ -41,6 +45,10 @@ protected:
 	vector2i Pos;       // This is the component's position inside the parent
     vector2i GlobalPos; // This is the global position in the whole screen
     vector2i Size;
+
+    bool bFocused;
+    //bool bDisabled;
+    //bool bVisible;
 
 	UIComponent* Parent;
 	vector<UIComponent*> Children;

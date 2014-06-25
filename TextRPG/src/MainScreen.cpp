@@ -4,9 +4,13 @@
 #include "TextGame.h"
 
 #include "Canvas.h"
-
+#include "UIButton.h"
+#include "UIMenu.h"
 #include "UIScreen.h"
 #include "MainScreen.h"
+
+void OnPlayClick();
+void OnExitClick();
 
 MainScreen::MainScreen(UIComponent* parent) : UIScreen(parent)
 {
@@ -16,18 +20,51 @@ MainScreen::~MainScreen(void)
 {
 }
 
-void MainScreen::Update(long period)
+void MainScreen::OnInit()
 {
-    UIComponent::Update(period);
+    UIScreen::OnInit();
+
+    MainMenu = dynamic_cast<UIMenu*>(GetChildComponent("mnMain"));
+    
+    // TODO: Set up the event the system, bind the event OnClick to member function of the screen instead of global function like this
+    UIButton* btnPlay = dynamic_cast<UIButton*>(MainMenu->GetChildComponent("btnPlay"));
+    btnPlay->OnClick = OnPlayClick;
+
+    UIButton* btnExit = dynamic_cast<UIButton*>(MainMenu->GetChildComponent("btnExit"));
+    btnExit->OnClick = OnExitClick;
+}
+
+bool MainScreen::HandleInput()
+{
+    bool bHandled = UIComponent::HandleInput();
+    if (bHandled)
+        return true;
 
     TextGame* game = TextGame::GetInstance();
 
 	ConsoleInput* input = ConsoleInput::GetInstance();
 
-    // TODO: Pass the input to the child component and listen to event onClick on the button in the menu
-    // For now, just make sure player get into the game if he hit Enter and quit and hit Escape so the game still playable
-	if (input->DidVKeyJustGoDown(VK_RETURN))
-		game->ChangeState("PlayingState");
+    // Let the main menu handle input first
+    if (MainMenu && MainMenu->HandleInput())
+    {
+        return true;
+    }
+
     if (input->DidVKeyJustGoDown(VK_ESCAPE))
+    {
         game->Exit();
+        return true;
+    }
+
+    return false;
+}
+
+void OnPlayClick()
+{
+    TextGame::GetInstance()->ChangeState("PlayingState");
+}
+
+void OnExitClick()
+{
+    TextGame::GetInstance()->Exit();
 }

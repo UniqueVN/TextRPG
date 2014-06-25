@@ -12,7 +12,4 @@ public:
 
 	void Begin(State* preState = NULL);
 	void End();
-
-protected:
-	int _selectID;
 };

@@ -14,7 +14,8 @@ UIComponent::UIComponent(UIComponent* parent) : Parent(parent),
         Pos(-1, -1),
         Size(-1, -1),
 		Text(""),
-		ID("")
+		ID(""),
+        bFocused(false)
 {
 }
 
@@ -86,6 +87,12 @@ void UIComponent::Render()
     {
         (*it)->Render();
     }
+}
+
+bool UIComponent::HandleInput()
+{
+    // Need to implement this function in the child class
+    return false;
 }
 
 UIComponent* UIComponent::Import(const xml_node& xmlNode, UIComponent* parent)
@@ -160,6 +167,19 @@ string UIComponent::GetText()
 void UIComponent::SetText(const string& newText)
 {
     Text = newText;
+}
+
+bool UIComponent::IsFocused()
+{
+    return bFocused;
+}
+
+void UIComponent::SetFocus(const bool newFocus)
+{
+    if (newFocus == bFocused)
+        return;
+
+    bFocused = newFocus;
 }
 
 UIComponent* UIComponent::GetChildComponent(const string& id)

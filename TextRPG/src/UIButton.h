@@ -7,4 +7,8 @@ class UIButton : public UILabel
 public:
 	UIButton(UIComponent* parent = NULL);
 	virtual ~UIButton(void);
+
+    virtual bool HandleInput();
+
+    void (*OnClick)();
 };

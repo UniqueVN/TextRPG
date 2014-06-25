@@ -64,6 +64,14 @@ void UIManager::Render()
         CurrentScreen->Render();
 }
 
+bool UIManager::HandleInput()
+{
+    if (CurrentScreen)
+        return CurrentScreen->HandleInput();
+
+    return false;
+}
+
 UIComponent* UIManager::ConstructComponent(const char* type, UIComponent* parent)
 {
 #define CHECK_COMPONENT(value, className) \

@@ -19,6 +19,7 @@ public:
 	// Update the UI screens/components
 	void Update(long period);
     void Render();
+    bool HandleInput(); // Return true if the component handled the input, return false if not
 
 	// Create an UI component from a xml node
 	UIComponent* CreateComponent(const xml_node& xmlNode, UIComponent* parent = NULL);

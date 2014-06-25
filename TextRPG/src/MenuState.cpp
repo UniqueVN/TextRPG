@@ -10,10 +10,6 @@
 
 MenuState::MenuState(void) : GameState("MenuState")
 {
-	_selectID = 0;
-
-	// Button: Play
-	// Button: Exit
 }
 
 MenuState::~MenuState(void)
@@ -23,6 +19,7 @@ MenuState::~MenuState(void)
 void MenuState::Update(long period)
 {
     UIManager::GetInstance()->Update(period);
+    UIManager::GetInstance()->HandleInput();
 }
 
 void MenuState::Render()
@@ -32,8 +29,6 @@ void MenuState::Render()
 
 void MenuState::Begin(State* preState)
 {
-	_selectID = 0;
-
 	GraphicDevice::GetInstance()->SetCursorVisibility(true);
 
     UIManager::GetInstance()->ShowScreen("MainScreen");
