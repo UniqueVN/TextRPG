@@ -7,15 +7,15 @@ class State;
 class StateMachine
 {
 public:
-	StateMachine(void);
-	~StateMachine(void);
+    StateMachine(void);
+    ~StateMachine(void);
 
-	State* GetCurrentState();
+    State* GetCurrentState();
     bool ChangeState(const string&);
-	bool AddState(const string&, State*);
-	bool AddState(State*);
+    bool AddState(const string&, State*);
+    bool AddState(State*);
 
 protected:
-	State* _curState;
+    State* _curState;
     map<string, State*> _states;
 };

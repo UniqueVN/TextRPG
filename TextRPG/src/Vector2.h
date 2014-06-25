@@ -15,36 +15,36 @@ template <typename T>
 class Vector2
 {
 public:
-	Vector2(T x = T(), T y = T());
-	Vector2(const Vector2<T>& otherVector);
-	~Vector2(void);
+    Vector2(T x = T(), T y = T());
+    Vector2(const Vector2<T>& otherVector);
+    ~Vector2(void);
 
-	T Length() const;
+    T Length() const;
     T DistanceTo(const Vector2<T>&) const;
 
-	void Normalize();						// Normalize the vector - length of vector will be 1
+    void Normalize();						// Normalize the vector - length of vector will be 1
 	
-	Vector2<T> Rotate(const double angle);	// Rotate the vector 
+    Vector2<T> Rotate(const double angle);	// Rotate the vector 
 
-	T Dot(const Vector2<T>&) const;			// Calculate Dot product between this vector with other
+    T Dot(const Vector2<T>&) const;			// Calculate Dot product between this vector with other
 
-	Vector2<T> ProjectOn(const Vector2<T>&);// Find projection vector onto other vector
+    Vector2<T> ProjectOn(const Vector2<T>&);// Find projection vector onto other vector
 
-	// Get a vector which orthogonal with this vector
-	Vector2<T> GetOrthogonal();
+    // Get a vector which orthogonal with this vector
+    Vector2<T> GetOrthogonal();
 	
-	// Operator overloading functions
-	Vector2<T>& operator = (const Vector2<T>& otherVector);
-	Vector2<T>& operator += (const Vector2<T>& otherVector);
-	Vector2<T>& operator -= (const Vector2<T>& otherVector);
-	Vector2<T>& operator *= (T t);
-	Vector2<T>& operator /= (T t);	// REQUIRE (t != 0)
-	Vector2<T>  operator - ();
-	bool operator == (const Vector2<T>& otherVector);
-	bool operator != (const Vector2<T>& otherVector);
+    // Operator overloading functions
+    Vector2<T>& operator = (const Vector2<T>& otherVector);
+    Vector2<T>& operator += (const Vector2<T>& otherVector);
+    Vector2<T>& operator -= (const Vector2<T>& otherVector);
+    Vector2<T>& operator *= (T t);
+    Vector2<T>& operator /= (T t);	// REQUIRE (t != 0)
+    Vector2<T>  operator - ();
+    bool operator == (const Vector2<T>& otherVector);
+    bool operator != (const Vector2<T>& otherVector);
 
-	T X;
-	T Y;
+    T X;
+    T Y;
 };
 
 // Operator overloading functions

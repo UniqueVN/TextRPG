@@ -1,4 +1,4 @@
-#include <windows.h>
+﻿#include <windows.h>
 #include "stdio.h"
 
 #include "BasicTypes.h"
@@ -19,9 +19,9 @@ void TestMap();
 
 int main()
 {
-	system("cls");
+    system("cls");
 
-	Game* game = TextGame::GetInstance();
+    Game* game = TextGame::GetInstance();
     game->Run();
 
     game->Destroy();

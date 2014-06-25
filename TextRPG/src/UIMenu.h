@@ -4,8 +4,8 @@
 class UIMenu : public UIComponent
 {
 public:
-	UIMenu(UIComponent* parent = NULL);
-	virtual ~UIMenu(void);
+    UIMenu(UIComponent* parent = NULL);
+    virtual ~UIMenu(void);
 
     bool HandleInput();
 

@@ -21,8 +21,8 @@ using namespace std;
 class TextGame : public Game, public StateMachine, public Singleton<TextGame>
 {
 public:
-	friend class MenuState;
-	friend class PlayingState;
+    friend class MenuState;
+    friend class PlayingState;
 
     Map* GetMap();
     Sprite* GetPlayer();

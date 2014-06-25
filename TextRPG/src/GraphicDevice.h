@@ -6,8 +6,8 @@ class GraphicDevice
 {
 public:
     static GraphicDevice* CreateInstance(const Size& resolution = Size(80, 50));
-	static GraphicDevice* CreateInstance(const ConfigData& configData);
-	static void DeleteInstance();
+    static GraphicDevice* CreateInstance(const ConfigData& configData);
+    static void DeleteInstance();
     static GraphicDevice* GetInstance();
 
     Size GetResolution();
@@ -19,16 +19,16 @@ public:
 
     void DrawRectangle(const Rect& rect, const Color& color, const char tile = ' ');
 
-	void SetPixelData(const int colIndex, const int rowIndex, const char& pixelChar, const Color& color);
+    void SetPixelData(const int colIndex, const int rowIndex, const char& pixelChar, const Color& color);
 	
-	void SetCursorPos(const Coordinate& cursorPos);
-	void SetCursorVisibility(const bool bVisibility);
+    void SetCursorPos(const Coordinate& cursorPos);
+    void SetCursorVisibility(const bool bVisibility);
 
     PIXEL& operator [](const Coordinate& pos);
 
 protected:
     void Init();
-	void SetupBuffer(HANDLE& bufferHandle);
+    void SetupBuffer(HANDLE& bufferHandle);
 
     static GraphicDevice* _instance;
 
@@ -41,6 +41,6 @@ protected:
 
 private:
     GraphicDevice(const Size& resolution);
-  	GraphicDevice(const ConfigData& configData);
-	~GraphicDevice(void);
+    GraphicDevice(const ConfigData& configData);
+    ~GraphicDevice(void);
 };

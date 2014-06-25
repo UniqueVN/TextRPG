@@ -10,19 +10,19 @@ public:
     Level(void);
     ~Level(void);
 
-	virtual void Start();
+    virtual void Start();
     virtual bool IsFinished();
 
-	int GetIndex();
-	void SetIndex(int);
+    int GetIndex();
+    void SetIndex(int);
 
-	Map* GetMap();
-	void SetMap(Map*);
+    Map* GetMap();
+    void SetMap(Map*);
 
 protected:
     int _index;
 
-	Map* _map;
+    Map* _map;
 
-	list<Sprite*> _sprites;	// All the sprites currently in the levels
+    list<Sprite*> _sprites;	// All the sprites currently in the levels
 };

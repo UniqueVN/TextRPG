@@ -12,7 +12,7 @@ public:
     GridBasedMapGenerator(void);
     ~GridBasedMapGenerator(void);
 
-    virtual void Generate(Map*);
+    void Generate(Map*);
 
 protected:
     void GenerateRoom(int x, int y);    // Generate a room at cell(x, y)

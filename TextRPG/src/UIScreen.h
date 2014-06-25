@@ -8,5 +8,5 @@ public:
     virtual ~UIScreen();
 
 protected:
-	virtual void OnInit();
+    virtual void OnInit();
 };

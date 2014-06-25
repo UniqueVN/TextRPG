@@ -10,11 +10,11 @@ public:
     void Update(long);
     void Render();
 
-	void NextLevel();
+    void NextLevel();
 
-	void Begin(State* preState = NULL);
-	void End();
+    void Begin(State* preState = NULL);
+    void End();
 
 protected:
-	int _lvlIndex;
+    int _lvlIndex;
 };

@@ -23,8 +23,8 @@ protected:
     virtual ~Game(void);
 
     virtual void Init();        // Initial game's components
-	virtual void Update(long);	// Update game contents
-	virtual void Render();		// Render game's scene
+    virtual void Update(long);	// Update game contents
+    virtual void Render();		// Render game's scene
 
     void UpdateFPS(long);
 

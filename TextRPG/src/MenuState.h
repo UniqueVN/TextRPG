@@ -7,9 +7,9 @@ public:
     MenuState(void);
     ~MenuState(void);
 
-	void Update(long);
+    void Update(long);
     void Render();
 
-	void Begin(State* preState = NULL);
-	void End();
+    void Begin(State* preState = NULL);
+    void End();
 };
