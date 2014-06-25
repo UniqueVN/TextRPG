@@ -26,7 +26,7 @@ void PlayingState::Update(long period)
     if (input->DidVKeyJustGoDown(VK_SPACE))
         NextLevel();
     if (input->DidVKeyJustGoDown(VK_ESCAPE))
-        game->ChangeState("WelcomeScreen");
+        game->ChangeState("MenuState");
 
     game->_playerController->Update(period);
     game->_map->Update();

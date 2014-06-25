@@ -1,0 +1,13 @@
+<MainScreen id="MainScreen" height="40" width="120">
+    <Label id="lbTitle" text="The Adventure" x="10" y="5"></Label>
+    <Menu id="mnMain" x="10" y="10">
+        <Button id="btnPlay"
+            text="Play"
+            hint="Play the game">
+        </Button>
+        <Button id="btnExit"
+            text="Exit"
+            hint="Close the game">
+        </Button>
+    </Menu>
+</MainScreen>

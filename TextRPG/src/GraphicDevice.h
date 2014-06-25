@@ -28,14 +28,14 @@ public:
 
 protected:
     void Init();
-	void SetupBuffer(const HANDLE& bufferHandle);
+	void SetupBuffer(HANDLE& bufferHandle);
 
     static GraphicDevice* _instance;
 
     Size _res;			// Resolution
-	Size _fontSize;
+    Size _fontSize;
     PIXEL *_pixels;		// Array of pixels data
-	HANDLE _hBackBuffer, _hActiveBuffer;
+    HANDLE _hBackBuffer, _hActiveBuffer;
 
     PIXEL _errPixel;
 

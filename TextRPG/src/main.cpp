@@ -26,7 +26,6 @@ int main()
 
     game->Destroy();
 
-    //getchar();
     return 0;
 }
 

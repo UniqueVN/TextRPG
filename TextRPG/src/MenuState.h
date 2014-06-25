@@ -1,11 +1,11 @@
 #pragma once
 #include "GameState.h"
 
-class WelcomeScreen : public GameState
+class MenuState : public GameState
 {
 public:
-    WelcomeScreen(void);
-    ~WelcomeScreen(void);
+    MenuState(void);
+    ~MenuState(void);
 
 	void Update(long);
     void Render();

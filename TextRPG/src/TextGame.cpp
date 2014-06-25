@@ -13,18 +13,19 @@ using namespace std;
 #include "Game.h"
 #include "StateMachine.h"
 #include "GameState.h"
-#include "WelcomeScreen.h"
+#include "MenuState.h"
 #include "PlayingState.h"
 
 #include "Sprite.h"
 #include "TextSprite.h"
-#include "Map.h"
-#include "ViewFrame.h"
-
 #include "PlayerController.h"
 
+#include "Map.h"
+#include "ViewFrame.h"
 #include "MapGenerator.h"
 #include "GridBasedMapGenerator.h"
+
+#include "UIManager.h"
 
 #include "TextGame.h"
 
@@ -67,11 +68,15 @@ void TextGame::Init()
     _mapGenerator = new GridBasedMapGenerator();
     _mapGenerator->Generate(_map);
 
+    // Initialize the UI system
+    UIManager* uiManager = UIManager::GetInstance();
+    uiManager->Import("../Data/UI.xml");
+
 	// Create game states
-	AddState(new WelcomeScreen());
+    AddState(new MenuState());
 	AddState(new PlayingState());
 
-	ChangeState("WelcomeScreen");
+	ChangeState("MenuState");
 	//ChangeState("PlayingState");
 }
 

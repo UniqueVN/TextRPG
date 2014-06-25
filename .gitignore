@@ -212,3 +212,5 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+Data/UI1.xml
+Data/_UI.xml

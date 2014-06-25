@@ -9,6 +9,9 @@ template <typename T> T* Singleton<T>::pInstance = 0;
 template <typename T>
 void Singleton<T>::CreateInstance()
 {
+    if (pInstance)
+        return;
+
     // Create the instance using its default constructor
 	pInstance = new T();
 }
@@ -16,7 +19,7 @@ void Singleton<T>::CreateInstance()
 template <typename T>
 T* Singleton<T>::GetInstance()
 {
-	if (pInstance == 0)
+	if (!pInstance)
 		CreateInstance();
 
 	return pInstance;
@@ -25,7 +28,11 @@ T* Singleton<T>::GetInstance()
 template <typename T>
 void Singleton<T>::DeleteInstance()
 {
-	delete T;
+    if (pInstance)
+    {
+	    delete pInstance;
+        pInstance = 0;
+    }
 }
 
 #endif

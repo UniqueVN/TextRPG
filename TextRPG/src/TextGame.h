@@ -9,7 +9,7 @@ using namespace std;
 #include "Game.h"
 #include "StateMachine.h"
 #include "GameState.h"
-#include "WelcomeScreen.h"
+#include "MenuState.h"
 #include "PlayingState.h"
 
 #include "Sprite.h"
@@ -21,7 +21,7 @@ using namespace std;
 class TextGame : public Game, public StateMachine, public Singleton<TextGame>
 {
 public:
-	friend class WelcomeScreen;
+	friend class MenuState;
 	friend class PlayingState;
 
     Map* GetMap();

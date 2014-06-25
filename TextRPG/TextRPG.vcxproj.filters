@@ -1,194 +1,245 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Source Files\Map">
-      <UniqueIdentifier>{6449236d-7a00-4077-82f8-cc937962b203}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Graphic">
-      <UniqueIdentifier>{b98a755d-837a-4b7c-ae48-e5e11b7130e0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Framework">
-      <UniqueIdentifier>{bee308c2-c4bc-4511-86b9-c511166adbb0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\State">
-      <UniqueIdentifier>{3d586225-411b-4c7c-b193-13bdc91c9d62}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Utilities">
-      <UniqueIdentifier>{91048305-895b-4cc6-8d8c-7b994a89b7f6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\TextRPG">
-      <UniqueIdentifier>{59dc2f13-2923-4404-a74f-4f3a1d045fd6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Data">
       <UniqueIdentifier>{b96d65db-6aad-4947-8750-44be8442a733}</UniqueIdentifier>
     </Filter>
+    <Filter Include="3rd party lib">
+      <UniqueIdentifier>{18df4cdc-f8cc-4a2b-9cf5-401ca4148c1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{bee308c2-c4bc-4511-86b9-c511166adbb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphic">
+      <UniqueIdentifier>{b98a755d-837a-4b7c-ae48-e5e11b7130e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map">
+      <UniqueIdentifier>{6449236d-7a00-4077-82f8-cc937962b203}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="State">
+      <UniqueIdentifier>{3d586225-411b-4c7c-b193-13bdc91c9d62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TextRPG">
+      <UniqueIdentifier>{59dc2f13-2923-4404-a74f-4f3a1d045fd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{91048305-895b-4cc6-8d8c-7b994a89b7f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{01ec5531-292c-4bb3-9604-05cc23696250}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Screen">
+      <UniqueIdentifier>{f076d939-058e-4c23-b2c0-b4ec558590bb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\BasicTypes.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\lib\pugiconfig.hpp">
+      <Filter>3rd party lib</Filter>
     </ClInclude>
-    <ClInclude Include="src\Canvas.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ConfigData.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ConfigParser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ConsoleInput.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\GameState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\GraphicDevice.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\GridBasedMapGenerator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Level.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Map.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\MapGenerator.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\lib\pugixml.hpp">
+      <Filter>3rd party lib</Filter>
     </ClInclude>
     <ClInclude Include="src\PlayerController.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\PlayingState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Singleton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Sprite.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\State.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\StateMachine.h">
-      <Filter>Header Files</Filter>
+      <Filter>TextRPG</Filter>
     </ClInclude>
     <ClInclude Include="src\TextGame.h">
-      <Filter>Header Files</Filter>
+      <Filter>TextRPG</Filter>
     </ClInclude>
     <ClInclude Include="src\TextSprite.h">
-      <Filter>Header Files</Filter>
+      <Filter>TextRPG</Filter>
     </ClInclude>
-    <ClInclude Include="src\Vector2.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\State.h">
+      <Filter>State</Filter>
     </ClInclude>
-    <ClInclude Include="src\ViewFrame.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\StateMachine.h">
+      <Filter>State</Filter>
     </ClInclude>
-    <ClInclude Include="src\WelcomeScreen.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\PlayingState.h">
+      <Filter>State</Filter>
     </ClInclude>
-    <ClInclude Include="src\Random.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\GameState.h">
+      <Filter>State</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GraphicDevice.h">
+      <Filter>Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Canvas.h">
+      <Filter>Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigData.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigParser.h">
+      <Filter>Utilities</Filter>
     </ClInclude>
     <ClInclude Include="src\FileUtil.h">
-      <Filter>Header Files</Filter>
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Singleton.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vector2.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sprite.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConsoleInput.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GridBasedMapGenerator.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Level.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MapGenerator.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Map.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BasicTypes.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Random.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ViewFrame.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UIButton.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UIComponent.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UILabel.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UIManager.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UIMenu.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UIScreen.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MenuState.h">
+      <Filter>State</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MainScreen.h">
+      <Filter>UI\Screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\GridBasedMapGenerator.cpp">
-      <Filter>Source Files\Map</Filter>
+      <Filter>Map</Filter>
     </ClCompile>
     <ClCompile Include="src\Map.cpp">
-      <Filter>Source Files\Map</Filter>
+      <Filter>Map</Filter>
     </ClCompile>
     <ClCompile Include="src\MapGenerator.cpp">
-      <Filter>Source Files\Map</Filter>
+      <Filter>Map</Filter>
     </ClCompile>
     <ClCompile Include="src\ViewFrame.cpp">
-      <Filter>Source Files\Map</Filter>
+      <Filter>Map</Filter>
     </ClCompile>
     <ClCompile Include="src\GraphicDevice.cpp">
-      <Filter>Source Files\Graphic</Filter>
+      <Filter>Graphic</Filter>
     </ClCompile>
     <ClCompile Include="src\Canvas.cpp">
-      <Filter>Source Files\Graphic</Filter>
+      <Filter>Graphic</Filter>
     </ClCompile>
     <ClCompile Include="src\Level.cpp">
-      <Filter>Source Files\Map</Filter>
+      <Filter>Map</Filter>
     </ClCompile>
     <ClCompile Include="src\Game.cpp">
-      <Filter>Source Files\Framework</Filter>
+      <Filter>Framework</Filter>
     </ClCompile>
     <ClCompile Include="src\Singleton.cpp">
-      <Filter>Source Files\Framework</Filter>
+      <Filter>Framework</Filter>
     </ClCompile>
     <ClCompile Include="src\ConfigData.cpp">
-      <Filter>Source Files\Utilities</Filter>
+      <Filter>Utilities</Filter>
     </ClCompile>
     <ClCompile Include="src\ConfigParser.cpp">
-      <Filter>Source Files\Utilities</Filter>
+      <Filter>Utilities</Filter>
     </ClCompile>
     <ClCompile Include="src\ConsoleInput.cpp">
-      <Filter>Source Files\Framework</Filter>
+      <Filter>Framework</Filter>
     </ClCompile>
     <ClCompile Include="src\Vector2.cpp">
-      <Filter>Source Files\Framework</Filter>
+      <Filter>Framework</Filter>
     </ClCompile>
     <ClCompile Include="src\PlayingState.cpp">
-      <Filter>Source Files\State</Filter>
+      <Filter>State</Filter>
     </ClCompile>
     <ClCompile Include="src\GameState.cpp">
-      <Filter>Source Files\State</Filter>
-    </ClCompile>
-    <ClCompile Include="src\WelcomeScreen.cpp">
-      <Filter>Source Files\State</Filter>
+      <Filter>State</Filter>
     </ClCompile>
     <ClCompile Include="src\StateMachine.cpp">
-      <Filter>Source Files\State</Filter>
+      <Filter>State</Filter>
     </ClCompile>
     <ClCompile Include="src\TextGame.cpp">
-      <Filter>Source Files\TextRPG</Filter>
+      <Filter>TextRPG</Filter>
     </ClCompile>
     <ClCompile Include="src\TextSprite.cpp">
-      <Filter>Source Files\TextRPG</Filter>
+      <Filter>TextRPG</Filter>
     </ClCompile>
     <ClCompile Include="src\PlayerController.cpp">
-      <Filter>Source Files\TextRPG</Filter>
+      <Filter>TextRPG</Filter>
     </ClCompile>
     <ClCompile Include="src\Sprite.cpp">
-      <Filter>Source Files\Framework</Filter>
+      <Filter>Framework</Filter>
     </ClCompile>
     <ClCompile Include="src\FileUtil.cpp">
-      <Filter>Source Files\Utilities</Filter>
+      <Filter>Utilities</Filter>
     </ClCompile>
     <ClCompile Include="src\State.cpp">
-      <Filter>Source Files\State</Filter>
+      <Filter>State</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\pugixml.cpp">
+      <Filter>3rd party lib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\UIButton.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UIComponent.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UILabel.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UIManager.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UIMenu.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UIScreen.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MenuState.cpp">
+      <Filter>State</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MainScreen.cpp">
+      <Filter>UI\Screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Data\Config.ini">
       <Filter>Data</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\Data\UI.xml">
+      <Filter>Data</Filter>
+    </Xml>
   </ItemGroup>
 </Project>
