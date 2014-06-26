@@ -35,6 +35,12 @@ TextGame::TextGame(void) : Game(), StateMachine()
 
 TextGame::~TextGame(void)
 {
+    ConsoleInput::DeleteInstance();
+    GraphicDevice::DeleteInstance();
+    UIManager::DeleteInstance();
+
+    if (_mapGenerator)
+        delete _mapGenerator;
 }
 
 void TextGame::Init()
@@ -78,6 +84,8 @@ void TextGame::Init()
 
 	ChangeState("MenuState");
 	//ChangeState("PlayingState");
+
+    delete data;
 }
 
 void TextGame::Update(long period)

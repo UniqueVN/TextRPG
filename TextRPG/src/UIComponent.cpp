@@ -22,10 +22,10 @@ UIComponent::UIComponent(UIComponent* parent) : Parent(parent),
 UIComponent::~UIComponent(void)
 {
     // Delete all the child components
-    for (vector<UIComponent*>::iterator it = Children.begin(); it != Children.end(); it++)
+    for (auto child : Children)
     {
-        if (*it)
-            delete (*it);
+        if (child)
+            delete child;
     }
 
     Children.clear();
@@ -50,10 +50,8 @@ void UIComponent::Update(long period)
 
     // Update all the child components
     vector2i childPos;
-    for (vector<UIComponent*>::iterator it = Children.begin(); it != Children.end(); it++)
+    for (auto childItem : Children)
     {
-        UIComponent* childItem = *it;
-
         // If the child item doesn't have position specified then calculate it
         if (childItem->Pos == vector2i(-1, -1))
         {
@@ -83,9 +81,9 @@ void UIComponent::Update(long period)
 void UIComponent::Render()
 {
     // Render all the child components
-    for (vector<UIComponent*>::iterator it = Children.begin(); it != Children.end(); it++)
+    for (auto childItem : Children)
     {
-        (*it)->Render();
+        childItem->Render();
     }
 }
 
@@ -184,10 +182,10 @@ void UIComponent::SetFocus(const bool newFocus)
 
 UIComponent* UIComponent::GetChildComponent(const string& id)
 {
-    for (vector<UIComponent*>::iterator it = Children.begin(); it != Children.end(); it++)
+    for (auto childItem : Children)
     {
-        if (*it && (*it)->ID == id)
-            return *it;
+        if (childItem && childItem->ID == id)
+            return childItem;
     }
 
 	return NULL;

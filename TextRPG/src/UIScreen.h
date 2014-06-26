@@ -4,7 +4,7 @@
 class UIScreen: public UIComponent
 {
 public:
-    UIScreen(UIComponent* parent = NULL);
+    UIScreen(UIComponent* parent = nullptr);
     virtual ~UIScreen();
 
 protected:

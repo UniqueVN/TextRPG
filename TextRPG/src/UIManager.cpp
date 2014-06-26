@@ -15,14 +15,23 @@ using namespace pugi;
 
 #include "UIManager.h"
 
-UIManager::UIManager(void)
+UIManager::UIManager(void) : CurrentScreen(nullptr)
 {
-	//MainWindow = 0;
+	
 }
 
 UIManager::~UIManager(void)
 {
-	//delete MainWindow;
+	for (auto screenIt : Screens)
+    {
+        if (screenIt.second)
+        {
+            delete screenIt.second;
+            screenIt.second = nullptr;
+        }
+    }
+
+    Screens.clear();
 }
 
 // Import the UI from an xml file

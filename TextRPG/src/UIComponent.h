@@ -11,10 +11,10 @@ using namespace pugi;
 class UIComponent
 {
 public:
-    UIComponent(UIComponent* parent = NULL);
+    UIComponent(UIComponent* parent = nullptr);
     virtual ~UIComponent(void);
 
-    static UIComponent* Import(const xml_node& xmlNode, UIComponent* parent = NULL);
+    static UIComponent* Import(const xml_node& xmlNode, UIComponent* parent = nullptr);
     // Import support functions
     static bool ImportValueInt(const xml_node& xmlNode, const char* attr, int& value, const int defaultValue = 0);
     static bool ImportValueFloat(const xml_node& xmlNode, const char* attr, float& value, const float defaultValue = 0);

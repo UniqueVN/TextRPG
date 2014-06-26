@@ -12,7 +12,7 @@ public:
 
     void NextLevel();
 
-    void Begin(State* preState = NULL);
+    void Begin(State* preState = nullptr);
     void End();
 
 protected:

@@ -7,7 +7,7 @@
 
 #include "GraphicDevice.h"
 
-GraphicDevice* GraphicDevice::_instance = 0;
+GraphicDevice* GraphicDevice::_instance = nullptr;
 
 GraphicDevice* GraphicDevice::CreateInstance(const Size& resolution)
 {
@@ -30,7 +30,7 @@ void GraphicDevice::DeleteInstance()
 	if (_instance)
 	{
 		delete _instance;
-		_instance = 0;
+		_instance = nullptr;
 	}
 }
 

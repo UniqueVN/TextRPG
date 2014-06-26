@@ -4,7 +4,7 @@
 #include "Singleton.h"
 
 // Initialize the instance as NULL
-template <typename T> T* Singleton<T>::pInstance = 0;
+template <typename T> T* Singleton<T>::pInstance = nullptr;
 
 template <typename T>
 void Singleton<T>::CreateInstance()
@@ -31,7 +31,7 @@ void Singleton<T>::DeleteInstance()
     if (pInstance)
     {
 	    delete pInstance;
-        pInstance = 0;
+        pInstance = nullptr;
     }
 }
 

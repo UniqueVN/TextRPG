@@ -10,6 +10,6 @@ public:
     void Update(long);
     void Render();
 
-    void Begin(State* preState = NULL);
+    void Begin(State* preState = nullptr);
     void End();
 };

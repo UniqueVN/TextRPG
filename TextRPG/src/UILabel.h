@@ -4,7 +4,7 @@
 class UILabel : public UIComponent
 {
 public:
-    UILabel(UIComponent* parent = NULL);
+    UILabel(UIComponent* parent = nullptr);
     virtual ~UILabel(void);
 
     virtual void Render();

@@ -5,7 +5,7 @@
 class MainScreen : public UIScreen
 {
 public:
-    MainScreen(UIComponent* parent = NULL);
+    MainScreen(UIComponent* parent = nullptr);
     ~MainScreen(void);
 
     bool HandleInput();
@@ -14,5 +14,5 @@ protected:
      void OnInit();
 
 private:
-    UIMenu* MainMenu;  
+    UIMenu* MainMenu;
 };

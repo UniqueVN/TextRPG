@@ -25,6 +25,7 @@ int main()
     game->Run();
 
     game->Destroy();
+    TextGame::DeleteInstance();
 
     return 0;
 }
