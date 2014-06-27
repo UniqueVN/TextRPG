@@ -83,6 +83,7 @@
     <ClInclude Include="src\ConfigData.h" />
     <ClInclude Include="src\ConfigParser.h" />
     <ClInclude Include="src\ConsoleInput.h" />
+    <ClInclude Include="src\EventDispatcher.h" />
     <ClInclude Include="src\FileUtil.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\GameState.h" />
@@ -118,6 +119,7 @@
     <ClCompile Include="src\ConfigData.cpp" />
     <ClCompile Include="src\ConfigParser.cpp" />
     <ClCompile Include="src\ConsoleInput.cpp" />
+    <ClCompile Include="src\EventDispatcher.cpp" />
     <ClCompile Include="src\FileUtil.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\GameState.cpp" />

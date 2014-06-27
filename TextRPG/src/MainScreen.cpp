@@ -1,3 +1,5 @@
+#include <functional>
+
 #include "GraphicDevice.h"
 #include "ConsoleInput.h"
 #include "Game.h"
@@ -8,9 +10,6 @@
 #include "UIMenu.h"
 #include "UIScreen.h"
 #include "MainScreen.h"
-
-void OnPlayClick();
-void OnExitClick();
 
 MainScreen::MainScreen(UIComponent* parent) : UIScreen(parent)
 {
@@ -26,12 +25,12 @@ void MainScreen::OnInit()
 
     MainMenu = dynamic_cast<UIMenu*>(GetChildComponent("mnMain"));
     
-    // TODO: Set up the event the system, bind the event OnClick to member function of the screen instead of global function like this
     UIButton* btnPlay = dynamic_cast<UIButton*>(MainMenu->GetChildComponent("btnPlay"));
-    btnPlay->OnClick = OnPlayClick;
+    btnPlay->AddEventListener("OnClick", std::bind(&MainScreen::OnPlayClick, this));
 
     UIButton* btnExit = dynamic_cast<UIButton*>(MainMenu->GetChildComponent("btnExit"));
-    btnExit->OnClick = OnExitClick;
+    btnExit->AddEventListener("OnClick", std::bind(&MainScreen::OnExitClick, this));
+    //btnExit->RemoveEventListener("OnClick", std::bind(&MainScreen::OnExitClick, this));
 }
 
 bool MainScreen::HandleInput()
@@ -59,12 +58,12 @@ bool MainScreen::HandleInput()
     return false;
 }
 
-void OnPlayClick()
+void MainScreen::OnPlayClick()
 {
     TextGame::GetInstance()->ChangeState("PlayingState");
 }
 
-void OnExitClick()
+void MainScreen::OnExitClick()
 {
     TextGame::GetInstance()->Exit();
 }

@@ -1,4 +1,5 @@
 #pragma once
+#include <functional>
 #include "UIComponent.h"
 #include "UILabel.h"
 
@@ -9,6 +10,4 @@ public:
     virtual ~UIButton(void);
 
     virtual bool HandleInput();
-
-    void (*OnClick)();
 };

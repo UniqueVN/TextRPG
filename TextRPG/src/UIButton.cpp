@@ -1,6 +1,8 @@
+#include <functional>
 #include "ConsoleInput.h"
 #include "UIComponent.h"
 #include "UILabel.h"
+
 #include "UIButton.h"
 
 UIButton::UIButton(UIComponent* parent) : UILabel(parent)
@@ -21,7 +23,7 @@ bool UIButton::HandleInput()
 	if (input->DidVKeyJustGoDown(VK_RETURN))
 	{
         bHandle = true;
-        OnClick();
+        TriggerEvent("OnClick");
 	}
 
     return bHandle;

@@ -10,6 +10,9 @@ public:
 
     bool HandleInput();
 
+    void OnPlayClick();
+    void OnExitClick();
+
 protected:
      void OnInit();
 

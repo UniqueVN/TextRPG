@@ -3,12 +3,13 @@
 #include <string>
 using namespace std;
 
-#include "BasicTypes.h"
-
 #include "lib\pugixml.hpp"
 using namespace pugi;
 
-class UIComponent
+#include "BasicTypes.h"
+#include "EventDispatcher.h"
+
+class UIComponent : public EventDispatcher
 {
 public:
     UIComponent(UIComponent* parent = nullptr);

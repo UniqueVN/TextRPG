@@ -135,6 +135,9 @@
     <ClInclude Include="src\MainScreen.h">
       <Filter>UI\Screen</Filter>
     </ClInclude>
+    <ClInclude Include="src\EventDispatcher.h">
+      <Filter>UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GridBasedMapGenerator.cpp">
@@ -230,6 +233,9 @@
     </ClCompile>
     <ClCompile Include="src\MainScreen.cpp">
       <Filter>UI\Screen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventDispatcher.cpp">
+      <Filter>UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

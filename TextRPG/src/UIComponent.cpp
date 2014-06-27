@@ -3,12 +3,12 @@
 #include <cstdlib>
 using namespace std;
 
+#include "lib\pugixml.hpp"
+using namespace pugi;
+
 #include "BasicTypes.h"
 #include "UIManager.h"
 #include "UIComponent.h"
-
-#include "lib\pugixml.hpp"
-using namespace pugi;
 
 UIComponent::UIComponent(UIComponent* parent) : Parent(parent),
         Pos(-1, -1),
