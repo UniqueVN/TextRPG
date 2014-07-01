@@ -23,6 +23,6 @@ void MapGenerator::Clear()
     for (int i = 0; i < size.X; i++)
         for (int j = 0; j < size.Y; j++)
         {
-            (*_map)[i][j] = ' ';
+            (*_map)[i][j] = EMPTY_TILE;
         }
 }

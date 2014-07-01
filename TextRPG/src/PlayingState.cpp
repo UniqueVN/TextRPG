@@ -3,6 +3,9 @@
 #include "Game.h"
 #include "TextGame.h"
 
+#include "ViewFrame.h"
+#include "Map.h"
+
 #include "Canvas.h"
 
 #include "GameState.h"
@@ -37,14 +40,18 @@ void PlayingState::Render()
     TextGame* game = TextGame::GetInstance();
     Canvas* canvas = Canvas::GetInstance();
 	
-	char lvlInfo[100];
-	sprintf_s(lvlInfo, 100, "Level : %d", _lvlIndex);
-	canvas->ShowText(lvlInfo, vector2i(3, 1), FOREGROUND_WHITE | FOREGROUND_INTENSITY);
-    
 	// TODO: Don't hard code the map view frame like this
-	canvas->DrawBorderDouble(Rect(1, 2, 62, 23), FOREGROUND_WHITE | FOREGROUND_INTENSITY);
+    ViewFrame* viewFrame = game->_map->GetViewFrame();
+    vector2f framePos = viewFrame->GetPosition();
+    vector2f frameSize = viewFrame->GetSize();
+    canvas->DrawBorderDouble(Rect(framePos.X - 1, framePos.Y - 1, frameSize.X + 1, frameSize.Y + 1), FOREGROUND_WHITE | FOREGROUND_INTENSITY);
 	game->_map->Render();
 
+	char lvlInfo[100];
+	sprintf_s(lvlInfo, 100, "Level : %d", _lvlIndex);
+    vector2i mapInfoPos(framePos.X + frameSize.X + 2, framePos.Y);
+    canvas->ShowText(lvlInfo, mapInfoPos, FOREGROUND_WHITE | FOREGROUND_INTENSITY);
+    
 	game->_player->Render();
 }
 

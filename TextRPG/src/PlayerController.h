@@ -2,15 +2,6 @@
 #include "Sprite.h"
 #include "Vector2.h"
 
-const vector2f DIR_MOVEMENT[] = { vector2f(1, 0), vector2f(0, 1), vector2f(-1, 0), vector2f(0, -1)};
-enum MovementDirection
-{
-    D_Right = 0,
-    D_Down,
-    D_Left,
-    D_Up
-};
-
 class PlayerController
 {
 public:

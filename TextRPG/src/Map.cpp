@@ -51,7 +51,7 @@ void Map::Update()
 
 void Map::Render()
 {
-    GraphicDevice* GraphicDevice = GraphicDevice::GetInstance();
+    GraphicDevice* graphicDevice = GraphicDevice::GetInstance();
     vector2f viewSize = _viewFrame->GetSize();
     vector2f offset = _viewFrame->GetOffset();
     vector2f pos = _viewFrame->GetPosition();
@@ -67,7 +67,7 @@ void Map::Render()
         for (int j = y0; j < y1; j++)
         {
             scrPos.Y = (int)pos.Y + j - y0;
-            (*GraphicDevice)[scrPos].Char.AsciiChar = _tiles[i][j];
+            (*graphicDevice)[scrPos].Char.AsciiChar = _tiles[i][j];
         }
     }
 }   

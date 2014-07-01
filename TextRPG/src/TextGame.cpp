@@ -55,17 +55,22 @@ void TextGame::Init()
     _device = GraphicDevice::CreateInstance(*gameData);
 
 	// Initialize the map and its view frame
-    _map = new Map(Size(80, 60));
+	ConfigData* mapData = data->GetSection("Map");
+    int mapWidth = mapData->GetIntValue("Width");
+    int mapHeight = mapData->GetIntValue("Height");
+    int mapFrameWidth = mapData->GetIntValue("MapFrameWidth");
+    int mapFrameHeight = mapData->GetIntValue("MapFrameHeight");
+    _map = new Map(Size(mapWidth, mapHeight));
     ViewFrame* viewFrame = _map->GetViewFrame();
-    viewFrame->SetSize(vector2f(60, 20));
-    viewFrame->SetPosition(vector2f(2, 3));
+    viewFrame->SetSize(vector2f(float(mapFrameWidth), float(mapFrameHeight)));
+    viewFrame->SetPosition(vector2f(1, 1));
 
 	ConsoleInput::CreateInstance();
 
 	ConfigData* playerData = data->GetSection("Player");
     _player = new TextSprite();
     _player->SetPosition(vector2f());
-	((TextSprite*)_player)->SetAvatar(playerData->GetValue("PlayerAvatar")[0]);
+	((TextSprite*)_player)->SetAvatar((char)playerData->GetIntValue("PlayerAvatar"));
 
     _playerController = new PlayerController();
     _playerController->SetPuppet(_player);

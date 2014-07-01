@@ -1,6 +1,7 @@
-﻿#ifndef GRAPHIC_DEVICE_CPP
+#ifndef GRAPHIC_DEVICE_CPP
 #define GRAPHIC_DEVICE_CPP
 
+#include <wchar.h>
 #include <windows.h>
 #include "BasicTypes.h"
 #include "ConfigData.h"
@@ -81,34 +82,40 @@ void GraphicDevice::Init()
 {
     _pixels = new PIXEL[_res.X * _res.Y];
 
-	//_hActiveBuffer = GetStdHandle(STD_OUTPUT_HANDLE);
-	_hActiveBuffer = CreateConsoleScreenBuffer( 
-		   GENERIC_READ | GENERIC_WRITE, 
-		   FILE_SHARE_READ | FILE_SHARE_WRITE,
-		   NULL,
-		   CONSOLE_TEXTMODE_BUFFER,
-		   NULL);
-
-	_hBackBuffer = CreateConsoleScreenBuffer( 
-		   GENERIC_READ | GENERIC_WRITE, 
-		   FILE_SHARE_READ | FILE_SHARE_WRITE,
-		   NULL,
-		   CONSOLE_TEXTMODE_BUFFER,
-		   NULL);
-
+    _hActiveBuffer = GetStdHandle(STD_OUTPUT_HANDLE);
     SetupBuffer(_hActiveBuffer);
+
+	_hBackBuffer = CreateConsoleScreenBuffer(
+		   GENERIC_READ | GENERIC_WRITE,
+		   FILE_SHARE_READ | FILE_SHARE_WRITE,
+		   NULL,
+		   CONSOLE_TEXTMODE_BUFFER,
+		   NULL);
+
+    SetConsoleActiveScreenBuffer(_hBackBuffer);
     SetupBuffer(_hBackBuffer);
 }
 
 void GraphicDevice::SetupBuffer(HANDLE& bufferHandle)
 {
-	//CONSOLE_SCREEN_BUFFER_INFO bufferInfo;
+    //BOOL bResult;
+    //DWORD error;
+
+    //CONSOLE_SCREEN_BUFFER_INFO bufferInfo;
 	//GetConsoleScreenBufferInfo(bufferHandle, &bufferInfo);
 	//COORD maxSize = GetLargestConsoleWindowSize(bufferHandle);
+    
+    CONSOLE_SCREEN_BUFFER_INFOEX bufferInfoEx;
+    bufferInfoEx.cbSize = sizeof(bufferInfoEx);
+    GetConsoleScreenBufferInfoEx(bufferHandle, &bufferInfoEx);
+    bufferInfoEx.bFullscreenSupported = true;
+    bufferInfoEx.srWindow.Right = _res.X - 1;
+    bufferInfoEx.srWindow.Bottom = _res.Y - 1;
+    SetConsoleScreenBufferInfoEx(bufferHandle, &bufferInfoEx);
 
-	COORD scrSize = { _res.X, _res.Y };
-    SetConsoleScreenBufferSize(bufferHandle, scrSize);
-	
+    //COORD scrSize = { _res.X, _res.Y };
+    //SetConsoleScreenBufferSize(bufferHandle, scrSize);
+
 	CONSOLE_CURSOR_INFO cursorInfo;
 	cursorInfo.bVisible = true;
 	//cursorInfo.dwSize = 100;
@@ -126,7 +133,12 @@ void GraphicDevice::SetupBuffer(HANDLE& bufferHandle)
 	GetCurrentConsoleFontEx(bufferHandle, false, &fontInfo);
 	fontInfo.dwFontSize.X = _fontSize.X;
 	fontInfo.dwFontSize.Y = _fontSize.Y;
+    wcscpy_s(fontInfo.FaceName, L"Terminal");
 	SetCurrentConsoleFontEx(bufferHandle, false, &fontInfo);
+	GetCurrentConsoleFontEx(bufferHandle, false, &fontInfo);
+
+    //bResult = SetConsoleDisplayMode(bufferHandle, CONSOLE_FULLSCREEN_MODE, &scrSize);
+    //error = GetLastError();
 }
 
 // Clear the buffer of GraphicDevice
@@ -154,15 +166,14 @@ void GraphicDevice::Render()
     rect.Bottom = _res.Y - 1;
     rect.Right = _res.X - 1;
 
-	// Render to the back buffer
-    //WriteConsoleOutput(_hActiveBuffer, _pixels, bufferSize, bufferCoord, &rect);
+    // Render to the back buffer
     WriteConsoleOutput(_hBackBuffer, _pixels, bufferSize, bufferCoord, &rect);
 
 	// Swap the current active buffer and the back buffer
 	HANDLE tempBuffer  = _hActiveBuffer;
 	_hActiveBuffer = _hBackBuffer;
 	_hBackBuffer = tempBuffer;
-		
+
 	SetConsoleActiveScreenBuffer(_hActiveBuffer);
 }
 
